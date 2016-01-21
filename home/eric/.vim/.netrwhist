@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/eric/Projects/instasong/is_db/Schema'
+let g:netrw_dirhist_2='/home/eric/Projects/instasong/is_db/Schema/account'
+let g:netrw_dirhist_3='/home/eric/Projects/opg/webapp/src/app/components'
+let g:netrw_dirhist_4='/home/eric/Projects/opg/webapp/src/app/main'
+let g:netrw_dirhist_5='/home/eric/Projects/opg'
+let g:netrw_dirhist_6='/home/eric/Projects/opg/db/opg'
+let g:netrw_dirhist_7='/home/eric/Projects/opg/webapp/bower_components/angular-xeditable/dist/js'
