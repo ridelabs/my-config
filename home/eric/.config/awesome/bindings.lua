@@ -13,9 +13,9 @@ globalkeys = awful.util.table.join(globalkeys,
 
     -- Volume Control
 
-    awful.key({     }, "XF86AudioRaiseVolume", function() awful.util.spawn("amixer set Master 5%+"); awful.util.spawn("canberra-gtk-play --file=/usr/share/sounds/freedesktop/stereo/message.oga", false) end),
-    awful.key({     }, "XF86AudioLowerVolume", function() awful.util.spawn("amixer set Master 5%-"); awful.util.spawn("canberra-gtk-play --file=/usr/share/sounds/freedesktop/stereo/message.oga", false) end),
-    awful.key({     }, "XF86AudioMute", function() awful.util.spawn("amixer set Headphone toggle", false); awful.util.spawn("amixer set Master toggle", false) end),
+    awful.key({     }, "XF86AudioRaiseVolume", function() awful.util.spawn("amixer -D pulse set Master 5%+"); awful.util.spawn("canberra-gtk-play --file=/usr/share/sounds/freedesktop/stereo/message.oga", false) end),
+    awful.key({     }, "XF86AudioLowerVolume", function() awful.util.spawn("amixer -D pulse set Master 5%-"); awful.util.spawn("canberra-gtk-play --file=/usr/share/sounds/freedesktop/stereo/message.oga", false) end),
+    awful.key({     }, "XF86AudioMute", function() awful.util.spawn("amixer -D pulse set Headphone toggle", false); awful.util.spawn("amixer -D pulse set Master toggle", false) end),
 
 
     -- Brightness
@@ -44,13 +44,14 @@ globalkeys = awful.util.table.join(globalkeys,
     --awful.key({ modkey,         }, "w", function () mymainmenu:show() end),
 
     -- awful.key({modkey }, "e", function() awful.util.spawn( "i3-dmenu-desktop" ) end)
-    awful.key({modkey}, "w", function() mymainmenu:toggle() end),
+    -- awful.key({modkey}, "w", function() mymainmenu:toggle() end),
     awful.key({modkey}, "p", function() menubar.show() end),
     awful.key({modkey}, "d", function() awful.util.spawn( "dmenu_run" ) end),
 
-	awful.key({ "Control", modkey }, "l", function () awful.util.spawn("xscreensaver-command -lock") end),
+	awful.key({ "Control", "Shift", modkey }, "l", function () awful.util.spawn("xscreensaver-command -lock") end),
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end),
+    awful.key({ modkey }, "w", function () awful.util.spawn("/home/eric/bin/wallpaper.sh")    end),
     awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end),
     awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative(-1) end),
     awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative( 1) end),
